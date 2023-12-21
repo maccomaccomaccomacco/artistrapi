@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artists",
+  "info": {
+    "singularName": "artist",
+    "pluralName": "artists",
+    "displayName": "Artist",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "year_born": {
+      "type": "integer"
+    },
+    "year_died": {
+      "type": "integer"
+    },
+    "nArtworks": {
+      "type": "integer"
+    },
+    "link": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "genres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::genre.genre",
+      "mappedBy": "artist"
+    }
+  }
+}
